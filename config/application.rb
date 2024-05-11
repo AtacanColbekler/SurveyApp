@@ -23,5 +23,8 @@ module SurveyProject
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Automatically annotate models after migrations
+
+
   end
 end
