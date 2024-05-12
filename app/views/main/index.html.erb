@@ -1,1 +1,7 @@
-<h1> Docker is Running... </h1>
+<h1> Server is Running... </h1>
+
+
+<%= form_tag("surveys", method: :get) do %>
+  <%= select_tag(:id, options_for_select(Survey.all.map { |survey| [survey.name, survey.id] }), onchange: "this.form.submit();") %>
+<% end %>
+
