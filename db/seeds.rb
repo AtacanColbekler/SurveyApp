@@ -24,12 +24,12 @@ question2_survey2 = survey2.questions.create(title: "Question 2 for Survey 2", q
 option1_question2_survey2 = question2_survey2.options.create(title: "Option 1 for Question 2")
 option2_question2_survey2 = question2_survey2.options.create(title: "Option 2 for Question 2")
 
-#feedback1 = Feedback.create(survey: survey1)
-#feedback2 = Feedback.create(survey: survey2)
+feedback1 = Feedback.create(survey: survey1)
+feedback2 = Feedback.create(survey: survey2)
 
-#feedback1.responses.create(question: question1_survey1, body: "Response to Question 1 for Survey 1", option: nil)
-#feedback1.responses.create(question: question2_survey1, body: "Response to Question 2 for Survey 1", option: option1_question2_survey1)
+feedback1.responses.create(question: question1_survey1, body: "Response to Question 1 for Survey 1 is ... text")
+feedback1.responses.create(question: question2_survey1, body: "Response to Question 2 for Survey 1 is ... ", option: option1_question2_survey1)
 
-#feedback2.responses.create(question: question1_survey2, body: "Response to Question 1 for Survey 2", option: nil)
-#feedback2.responses.create(question: question2_survey2, body: "Response to Question 2 for Survey 2", option: option2_question2_survey2)
+feedback2.responses.create(question: question1_survey2, body: "Response to Question 1 for Survey 2 is ... text")
+feedback2.responses.create(question: question2_survey2, body: "Response to Question 2 for Survey 2 is ... ", option: option2_question2_survey2)
 

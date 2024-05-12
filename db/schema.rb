@@ -16,10 +16,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_10_133228) do
   enable_extension "plpgsql"
 
   create_table "feedbacks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.bigint "survey_id", null: false
+    t.uuid "survey_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_feedbacks_on_survey_id"
   end
 
   create_table "options", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -39,14 +38,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_10_133228) do
 
   create_table "responses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "body"
-    t.bigint "question_id", null: false
-    t.bigint "option_id", null: false
-    t.bigint "feedback_id", null: false
+    t.uuid "question_id", null: false
+    t.uuid "option_id"
+    t.uuid "feedback_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["feedback_id"], name: "index_responses_on_feedback_id"
-    t.index ["option_id"], name: "index_responses_on_option_id"
-    t.index ["question_id"], name: "index_responses_on_question_id"
   end
 
   create_table "surveys", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

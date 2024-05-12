@@ -1,17 +1,26 @@
 <h1> <strong>Survey Name: </strong> <%= @survey.name %> </h1>
 <p> <strong>ID: </strong> <%= @survey.id %> </p>
-<% @survey.questions.each do |question| %>
+
+  <% @survey.questions.each do |question| %>
     <h3><%= question.title %></h3>
-    <p><strong>Type:</strong> <%= question.question_type %></p>
+    
     
 
-    <% if question.options.any? %>
-    <ul>
-      <% question.options.each do |option| %>
-        <li><%= option.title %></li>
+      <% if question.options.any? %>
+        <ul>
+          <% question.options.each do |option| %>
+            
+            <li><input type="checkbox"></input><%= option.title %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
+
+      <% if question.question_type == "text" %>
+        
+      <input type="text"></input>
+
+      <% end %>
 
   <% end %>
-
+ 
+  
